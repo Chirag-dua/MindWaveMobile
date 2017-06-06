@@ -82,12 +82,14 @@ public class RecordAttention extends Activity{
     private BluetoothAdapter mBluetoothAdapter;
     private BluetoothDevice mBluetoothDevice;
     private String address = null;
+    private final static int PICK_FILE_RESULT_CODE = 10;
 
     private TextView tv_ps = null;
     private TextView tv_attention = null;
 //    private TextView tv_meditation = null;
     public TextView at_mn = null;
     public TextView clkcnt = null;
+    private TextView pt;
 
     private Button btn_start = null;
     private Button btn_stop = null;
@@ -223,8 +225,7 @@ public class RecordAttention extends Activity{
     }
 
 
-    // function to initialise view
-     public void initView() {
+    public void initView() {
         tv_ps = (TextView) findViewById(R.id.tv_ps);
         tv_attention = (TextView) findViewById(R.id.tv_attention);
 //        tv_meditation = (TextView) findViewById(R.id.tv_meditation);
@@ -233,119 +234,143 @@ public class RecordAttention extends Activity{
         btn_stop = (Button) findViewById(R.id.btn_stop);
         //wave_layout = (LinearLayout) findViewById(R.id.wave_layout);
 
-         TextView pt = (TextView) findViewById(R.id.paraText);
+        pt = (TextView) findViewById(R.id.paraText);
 
-         File myFile = new File(Environment.getExternalStorageDirectory().toString() + "/text_file_2.txt");
-         try {
-             FileReader fr=new FileReader(myFile);
-             BufferedReader br=new BufferedReader(fr);
-             String line2 = null;
-             try {
-                 while((line2 = br.readLine()) != null)
-                 {
-                     pt.append(line2);
-                     pt.append("\n");
-                 }
-             } catch (IOException e) {
-                 // TODO Auto-generated catch block
-                 e.printStackTrace();
-             }
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         }
-
-         pt.setMovementMethod(new ScrollingMovementMethod());
-
-         btn_start.setOnClickListener(new OnClickListener() {
-
-             @Override
-             public void onClick(View arg0) {
-                 badPacketCount = 0;
-                 showToast("connecting ...", Toast.LENGTH_SHORT);
-                 start();
-             }
-         });
-
-         btn_stop.setOnClickListener(new OnClickListener() {
-
-             @Override
-             public void onClick(View arg0) {
-                 // TODO Auto-generated method stub
-                 if (tgStreamReader != null) {
-                     tgStreamReader.stop();
-
-                     try {
-                         SimpleDateFormat sDate = new SimpleDateFormat("ddMMyyyyhhmmss");
-                         String date = sDate.format(new Date());
-
-                         Calendar c = Calendar.getInstance();
-                         fsec = c.get(Calendar.SECOND);
-
-                         Log.v("final time : " + fsec, TG2);
-
-                         File atValFile = new File("/sdcard/AtVal " + date + ".txt");
-                         atValFile.createNewFile();
-                         FileOutputStream fOut2 = new FileOutputStream(atValFile);
-                         OutputStreamWriter myOutWriter2 = new OutputStreamWriter(fOut2);
-                         for (int i = 0; i < atVal.size(); i++) {
-                             myOutWriter2.append(Integer.toString(atVal.get(i)) + " ");
-                         }
-                         myOutWriter2.close();
-                         fOut2.close();
-
-                         File compressedFile = new File("/sdcard/C_" + date);
-                         compressedFile.createNewFile();
-                         HuffmanCompression huffmanCompression = new HuffmanCompression();
-                         huffmanCompression.encode(atValFile, compressedFile);
-
-
-                         Toast.makeText(getBaseContext(), "Done Writing To File", Toast.LENGTH_SHORT).show();
-
-                         setContentView(R.layout.attention_graph);
-
-                         at_mn = (TextView) findViewById(R.id.meanAtt2);
-                         clkcnt = (TextView) findViewById(R.id.clkcnt);
-
-                         File myFile2 = new File("/sdcard/AtVal " + date + ".txt");
-
-                         FileReader fr = new FileReader(myFile2);
-                         BufferedReader br = new BufferedReader(fr);
-
-                         StringBuilder sbr = new StringBuilder();
-
-                         while ((line = br.readLine()) != null) {
-                             sbr.append(line);
-
-                         }
-                         fContent = sbr.toString();
-                         setUpDrawWaveView2();
-
-                         String s = dmean.toString();
-                         at_mn.setText(s);
-
-                         int tm = fsec-isec;
-
-                         clkcnt.setText(tm);
-
-                     } catch (Exception e) {
-                         Log.v("Write Byte ", e.getMessage());
-                         Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                     }
-                 }
-             }
-
-         });
+        Button file_select = (Button) findViewById(R.id.btn_selectfile);
+        file_select.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("text/plain");
+                startActivityForResult(intent, PICK_FILE_RESULT_CODE);
+            }
+        });
 
         btn_selectdevice =  (Button) findViewById(R.id.btn_selectdevice);
-
         btn_selectdevice.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 scanDevice();
             }
+        });
+
+        setParaTextAndStartFunction(Environment.getExternalStorageDirectory().toString() + "/text_file_3.txt");
+    }
+
+    private void setParaTextAndStartFunction(String file) {
+
+        File myFile = new File(file);
+        try {
+            FileReader fr=new FileReader(myFile);
+            BufferedReader br=new BufferedReader(fr);
+            String line = null;
+            try {
+                while((line = br.readLine()) != null)
+                {
+                    pt.append(line);
+                    pt.append("\n");
+                }
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        pt.setMovementMethod(new ScrollingMovementMethod());
+
+
+
+        btn_start.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                badPacketCount = 0;
+                showToast("connecting ...", Toast.LENGTH_SHORT);
+                start();
+            }
+        });
+
+        btn_stop.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                if (tgStreamReader != null) {
+                    tgStreamReader.stop();
+
+                    try {
+                        SimpleDateFormat sDate = new SimpleDateFormat("ddMMyyyyhhmmss");
+                        String date = sDate.format(new Date());
+
+                        File atValFile = new File("/sdcard/AtVal " + date + ".txt");
+                        atValFile.createNewFile();
+                        FileOutputStream fOut2 = new FileOutputStream(atValFile);
+                        OutputStreamWriter myOutWriter2 = new OutputStreamWriter(fOut2);
+                        for (int i = 0; i < atVal.size(); i++) {
+                            myOutWriter2.append(Integer.toString(atVal.get(i)) + " ");
+                        }
+                        myOutWriter2.close();
+                        fOut2.close();
+
+                        File compressedFile = new File("/sdcard/C_" + date);
+                        compressedFile.createNewFile();
+                        HuffmanCompression huffmanCompression = new HuffmanCompression();
+                        huffmanCompression.encode(atValFile, compressedFile);
+
+
+                        Toast.makeText(getBaseContext(), "Done Writing To File", Toast.LENGTH_SHORT).show();
+
+                        setContentView(R.layout.attention_graph);
+
+                        File myFile2 = new File("/sdcard/AtVal " + date + ".txt");
+                        try {
+                            FileReader fr = new FileReader(myFile2);
+                            BufferedReader br = new BufferedReader(fr);
+
+                            StringBuilder sbr = new StringBuilder();
+                            try {
+                                while ((line = br.readLine()) != null){
+                                    sbr.append(line);
+                                    line = sbr.toString();
+                                }
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+
+                        setUpDrawWaveView2();
+
+
+                        String s = "Mean Attention Value : " + dmean.toString();
+                        at_mn.setText(s);
+
+                    } catch (Exception e) {
+                        Log.v("Write Byte ", e.getMessage());
+                        Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
 
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode){
+            case PICK_FILE_RESULT_CODE:
+                if(resultCode==RESULT_OK){
+                    String FilePath = data.getData().getPath();
+                    setParaTextAndStartFunction(FilePath);
+                }
+                break;
+
+        }
     }
 
     private void start(){

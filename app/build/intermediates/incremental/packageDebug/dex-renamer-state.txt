@@ -1,0 +1,7 @@
+#Mon Jun 05 10:54:35 IST 2017
+base.0=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_51ad8f876d3b3f937af9b5394cf8d9394201ff21
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_443214e0c6ca3ae50dc5708bf12f260530e5ba4d/classes.dex
+base.1=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_443214e0c6ca3ae50dc5708bf12f260530e5ba4d
+file.0=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_51ad8f876d3b3f937af9b5394cf8d9394201ff21/classes.dex
