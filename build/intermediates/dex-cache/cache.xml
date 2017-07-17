@@ -2,67 +2,49 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_443214e0c6ca3ae50dc5708bf12f260530e5ba4d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zeerorg/.android/build-cache/1a536efa7636aa63423eb90c360f0fd0db1e6fa4/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="987adec819c9a98faf215814f41195da48fc724e">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a40fbb51745d5f87d81b57f7491ac82eab0fb0a0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zeerorg/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eb6358ec781ac135020657c75e4c24887a8e70ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zeerorg/Documents/MindWaveMobile/app/libs/libStreamSDK_v1.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="033b7351fc2173a9ac8e82a355c877495759eb67">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/2/libStreamSDK_v1.2.0_92a98de7d931cd6485d38155831607e8a4f554bf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/rishabh/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zeerorg/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/rishabh/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_16962c4c1a65b8c0c568b3b5724fd8bf6e1eb578/classes.dex" />
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_6ffcfcffbc94ab0577527e0feb54ed2f03227adf.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/rishabh/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="18906352f86bdf5c193d77d96560817f1d8e217c">
-        <dex dex="/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_51ad8f876d3b3f937af9b5394cf8d9394201ff21/classes.dex" />
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/classes_9fe099b9fc146535074ba159067e1c26f2a3658c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rishabh/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rishabh/.android/build-cache/f71cd8d89994b9557b23f71d85f14f71df64547f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="987adec819c9a98faf215814f41195da48fc724e">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/classes_6dc47c3c39c0a584b1be42a51527839cd63663fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rishabh/Documents/MindWaveMobile/app/libs/libStreamSDK_v1.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="033b7351fc2173a9ac8e82a355c877495759eb67">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/libStreamSDK_v1.2.0_a2fcb31c24780de25e6a7feb0c8a8d5207d1f877.jar" />
     </item>
 
 </items>

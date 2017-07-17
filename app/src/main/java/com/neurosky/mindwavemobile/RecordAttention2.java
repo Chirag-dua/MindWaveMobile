@@ -101,6 +101,7 @@ public class RecordAttention2 extends Activity{
     private static final int PICK_FILE_RESULT_CODE = 10;
 
     private int currentState = 0;
+    private static final int REQUEST_READ_PERMISSION = 786;
     private TgStreamHandler callback = new TgStreamHandler() {
 
         @Override
@@ -232,6 +233,9 @@ public class RecordAttention2 extends Activity{
         file_select.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (ContextCompat.checkSelfPermission(RecordAttention2.this,Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(RecordAttention2.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_READ_PERMISSION);
+                }
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("text/plain");
                 startActivityForResult(intent, PICK_FILE_RESULT_CODE);
@@ -705,5 +709,24 @@ public class RecordAttention2 extends Activity{
     protected void onStop() {
         super.onStop();
         stop();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_READ_PERMISSION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("text/plain");
+                    startActivityForResult(intent, PICK_FILE_RESULT_CODE);
+                } else {
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 }

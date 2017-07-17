@@ -1,16 +1,16 @@
-#Mon Jun 05 10:36:34 IST 2017
-renamed.4=classes3.dex
-renamed.3=classes4.dex
-renamed.2=classes.dex
-renamed.1=classes5.dex
-base.4=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eb6358ec781ac135020657c75e4c24887a8e70ef
-renamed.0=classes2.dex
-base.3=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_16962c4c1a65b8c0c568b3b5724fd8bf6e1eb578
-base.2=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/2/libStreamSDK_v1.2.0_92a98de7d931cd6485d38155831607e8a4f554bf
-base.1=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a40fbb51745d5f87d81b57f7491ac82eab0fb0a0
-base.0=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45
-file.4=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eb6358ec781ac135020657c75e4c24887a8e70ef/classes.dex
-file.3=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_16962c4c1a65b8c0c568b3b5724fd8bf6e1eb578/classes.dex
-file.2=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/2/libStreamSDK_v1.2.0_92a98de7d931cd6485d38155831607e8a4f554bf/classes.dex
-file.1=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a40fbb51745d5f87d81b57f7491ac82eab0fb0a0/classes.dex
-file.0=/home/zeerorg/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45/classes.dex
+#Mon Jul 17 12:12:24 IST 2017
+renamed.4=classes2.dex
+renamed.3=classes.dex
+renamed.2=classes5.dex
+renamed.1=classes4.dex
+base.4=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45
+renamed.0=classes3.dex
+base.3=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/2/libStreamSDK_v1.2.0_a2fcb31c24780de25e6a7feb0c8a8d5207d1f877
+base.2=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9fe099b9fc146535074ba159067e1c26f2a3658c
+base.1=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6dc47c3c39c0a584b1be42a51527839cd63663fa
+base.0=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_6ffcfcffbc94ab0577527e0feb54ed2f03227adf
+file.4=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_b08615a0828df1d2c22ec1e3b0b9448277cf3b45/classes.dex
+file.3=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/2/libStreamSDK_v1.2.0_a2fcb31c24780de25e6a7feb0c8a8d5207d1f877/classes.dex
+file.2=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9fe099b9fc146535074ba159067e1c26f2a3658c/classes.dex
+file.1=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6dc47c3c39c0a584b1be42a51527839cd63663fa/classes.dex
+file.0=/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_6ffcfcffbc94ab0577527e0feb54ed2f03227adf/classes.dex
