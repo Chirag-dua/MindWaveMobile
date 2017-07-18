@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -256,23 +258,39 @@ public class RecordAttention2 extends Activity{
 
     private void setParaTextAndStartFunction(String file) {
 
-        File myFile = new File(file);
-        try {
-            FileReader fr=new FileReader(myFile);
-            BufferedReader br=new BufferedReader(fr);
-            String line = null;
+        if (file.contains(".pdf")) {
             try {
-                while((line = br.readLine()) != null)
-                {
-                    pt.append(line);
-                    pt.append("\n");
+                String parsedText="";
+                PdfReader reader = new PdfReader(file);
+                int n = reader.getNumberOfPages();
+                for (int i = 0; i <n ; i++) {
+                    parsedText   = parsedText+ PdfTextExtractor.getTextFromPage(reader, i+1).trim()+"\n"; //Extracting the content from the different pages
                 }
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
+                pt.setText(parsedText);
+                Log.e("RecordAttention", "PDF :: DATA \n " + parsedText);
+                reader.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("RecordAttention", e.toString());
+            }
+        } else {
+            File myFile = new File(file);
+            try {
+                FileReader fr = new FileReader(myFile);
+                BufferedReader br = new BufferedReader(fr);
+                String line = null;
+                try {
+                    while ((line = br.readLine()) != null) {
+                        pt.append(line);
+                        pt.append("\n");
+                    }
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
 
         pt.setMovementMethod(new ScrollingMovementMethod());

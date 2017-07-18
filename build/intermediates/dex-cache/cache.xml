@@ -3,15 +3,6 @@
 
     <item
         is-multidex="false"
-        jar="/home/rishabh/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_6ffcfcffbc94ab0577527e0feb54ed2f03227adf.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/rishabh/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -39,12 +30,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/rishabh/.gradle/caches/modules-2/files-2.1/com.itextpdf/itextg/5.5.10/247811bfc4d8f4e99c909236eadf4dfc6dfa1615/itextg-5.5.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="247811bfc4d8f4e99c909236eadf4dfc6dfa1615">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/itextg-5.5.10_5e95b0b7744f98e46d7c2f1ffa40db421cdb8876.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/rishabh/Documents/MindWaveMobile/app/libs/libStreamSDK_v1.2.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="033b7351fc2173a9ac8e82a355c877495759eb67">
         <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/libStreamSDK_v1.2.0_a2fcb31c24780de25e6a7feb0c8a8d5207d1f877.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/rishabh/.android/build-cache/d50cecf48bd6ed98524e2c5e48a9e941b7cd9201/output/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/home/rishabh/Documents/MindWaveMobile/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_6ffcfcffbc94ab0577527e0feb54ed2f03227adf.jar" />
     </item>
 
 </items>
