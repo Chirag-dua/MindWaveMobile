@@ -24,6 +24,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -198,8 +199,13 @@ public class CompareAttention extends Activity implements View.OnClickListener {
     public void setUpDrawWaveView() {
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
+        graph.getViewport().setScrollable(true);
+        graph.getViewport().setScalable(true);
+        graph.getViewport().scrollToEnd();
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setMaxY(100);
+        graph.getViewport().setMaxX(20);
+
 
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(generateData(fileContent));
         series.setColor(Color.RED);
@@ -216,11 +222,18 @@ public class CompareAttention extends Activity implements View.OnClickListener {
         int sz = l1.size();
         DataPoint[] values = new DataPoint[sz];
         for (int i=0; i<sz; i++) {
-            double x = i;
+
+            double x;
+
+            if(i%2 == 0)
+                x = i/2;
+            else
+                x = i/2 + 0.5;
             double y = l1.get(i);
             DataPoint v = new DataPoint(x, y);
             values[i] = v;
         }
+        Log.d("this is my array", "arr: " + Arrays.toString(values));
         return values;
 
     }

@@ -8,6 +8,14 @@
         "source": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\src\\main\\res\\layout\\attention_graph.xml"
     },
     {
+        "merged": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\attention_record_pdf_view.xml",
+        "source": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\src\\main\\res\\layout\\attention_record_pdf_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\attention_record_img_view.xml",
+        "source": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\src\\main\\res\\layout\\attention_record_img_view.xml"
+    },
+    {
         "merged": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\attention_compare_view.xml",
         "source": "C:\\Users\\Chirag\\AndroidStudioProjects\\MindWaveMobile\\app\\src\\main\\res\\layout\\attention_compare_view.xml"
     },

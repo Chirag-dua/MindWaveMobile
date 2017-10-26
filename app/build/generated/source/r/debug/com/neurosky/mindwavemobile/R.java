@@ -9,6 +9,29 @@ package com.neurosky.mindwavemobile;
 
 public final class R {
     public static final class attr {
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sb_handlerColor=0x7f010004;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+         */
+        public static final int sb_horizontal=0x7f010007;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sb_indicatorColor=0x7f010005;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sb_indicatorTextColor=0x7f010006;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -92,61 +115,73 @@ containing a value of this type.
         public static final int version_info_text_size=0x7f060026;
     }
     public static final class drawable {
-        public static final int gouxuan1=0x7f020000;
-        public static final int gouxuan2=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int select_device_bg=0x7f020003;
+        public static final int default_scroll_handle_bottom=0x7f020000;
+        public static final int default_scroll_handle_left=0x7f020001;
+        public static final int default_scroll_handle_right=0x7f020002;
+        public static final int default_scroll_handle_top=0x7f020003;
+        public static final int gouxuan1=0x7f020004;
+        public static final int gouxuan2=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int select_device_bg=0x7f020007;
     }
     public static final class id {
-        public static final int AbsoluteLayout1=0x7f0a0019;
+        public static final int AbsoluteLayout1=0x7f0a001b;
         public static final int btn_at=0x7f0a0002;
         public static final int btn_at_2=0x7f0a0003;
-        public static final int btn_cmp=0x7f0a0013;
-        public static final int btn_fil1=0x7f0a000f;
-        public static final int btn_fil2=0x7f0a0011;
+        public static final int btn_at_3=0x7f0a0004;
+        public static final int btn_at_4=0x7f0a0005;
+        public static final int btn_cmp=0x7f0a0015;
+        public static final int btn_fil1=0x7f0a0011;
+        public static final int btn_fil2=0x7f0a0013;
         public static final int btn_recordNew=0x7f0a0001;
-        public static final int btn_select_com=0x7f0a000a;
-        public static final int btn_select_txt=0x7f0a0009;
-        public static final int btn_selectdevice=0x7f0a001a;
-        public static final int btn_start=0x7f0a000c;
-        public static final int btn_stop=0x7f0a000d;
+        public static final int btn_select_com=0x7f0a000c;
+        public static final int btn_select_txt=0x7f0a000b;
+        public static final int btn_selectdevice=0x7f0a001c;
+        public static final int btn_start=0x7f0a000e;
+        public static final int btn_stop=0x7f0a000f;
         public static final int btn_viewPrev=0x7f0a0000;
-        public static final int clkcnt=0x7f0a0018;
-        public static final int clktxt=0x7f0a0017;
-        public static final int cmp_att=0x7f0a0004;
-        public static final int device_name=0x7f0a0026;
-        public static final int graph=0x7f0a0014;
-        public static final int img1=0x7f0a0024;
-        public static final int img2=0x7f0a0025;
-        public static final int list_select=0x7f0a0023;
-        public static final int meanAtt=0x7f0a0015;
-        public static final int meanAtt2=0x7f0a0016;
-        public static final int paraText=0x7f0a0020;
-        public static final int tableLayout1=0x7f0a0005;
-        public static final int tableRow1=0x7f0a0006;
-        public static final int tableRow2=0x7f0a0008;
-        public static final int tableRow3=0x7f0a000b;
-        public static final int tvFil1=0x7f0a0010;
-        public static final int tvFil2=0x7f0a0012;
-        public static final int tv_attention=0x7f0a001e;
-        public static final int tv_attention_label=0x7f0a001d;
-        public static final int tv_file_name=0x7f0a0007;
-        public static final int tv_meditation=0x7f0a0022;
-        public static final int tv_meditation_label=0x7f0a0021;
-        public static final int tv_ps=0x7f0a001c;
-        public static final int tv_ps_lable=0x7f0a001b;
-        public static final int tv_r2r_label=0x7f0a001f;
-        public static final int wave_layout=0x7f0a000e;
+        public static final int clkcnt=0x7f0a001a;
+        public static final int clktxt=0x7f0a0019;
+        public static final int cmp_att=0x7f0a0006;
+        public static final int cpdf=0x7f0a0024;
+        public static final int device_name=0x7f0a002c;
+        public static final int graph=0x7f0a0016;
+        public static final int img1=0x7f0a002a;
+        public static final int img2=0x7f0a002b;
+        public static final int imgsel=0x7f0a0022;
+        public static final int imgv=0x7f0a0023;
+        public static final int list_select=0x7f0a0029;
+        public static final int meanAtt=0x7f0a0017;
+        public static final int meanAtt2=0x7f0a0018;
+        public static final int paraText=0x7f0a0026;
+        public static final int pdfView=0x7f0a0025;
+        public static final int tableLayout1=0x7f0a0007;
+        public static final int tableRow1=0x7f0a0008;
+        public static final int tableRow2=0x7f0a000a;
+        public static final int tableRow3=0x7f0a000d;
+        public static final int tvFil1=0x7f0a0012;
+        public static final int tvFil2=0x7f0a0014;
+        public static final int tv_attention=0x7f0a0020;
+        public static final int tv_attention_label=0x7f0a001f;
+        public static final int tv_file_name=0x7f0a0009;
+        public static final int tv_meditation=0x7f0a0028;
+        public static final int tv_meditation_label=0x7f0a0027;
+        public static final int tv_ps=0x7f0a001e;
+        public static final int tv_ps_lable=0x7f0a001d;
+        public static final int tv_r2r_label=0x7f0a0021;
+        public static final int wave_layout=0x7f0a0010;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_view_previous=0x7f030001;
         public static final int attention_compare_view=0x7f030002;
         public static final int attention_graph=0x7f030003;
-        public static final int attention_record_view=0x7f030004;
-        public static final int bluetoothdevice_view=0x7f030005;
-        public static final int dialog_select_device=0x7f030006;
-        public static final int listitem_device=0x7f030007;
+        public static final int attention_record_img_view=0x7f030004;
+        public static final int attention_record_pdf_view=0x7f030005;
+        public static final int attention_record_view=0x7f030006;
+        public static final int bluetoothdevice_view=0x7f030007;
+        public static final int dialog_select_device=0x7f030008;
+        public static final int listitem_device=0x7f030009;
     }
     public static final class raw {
         public static final int tgam_capture=0x7f050000;
@@ -258,5 +293,71 @@ containing a value of this type.
           @attr name com.neurosky.mindwavemobile:seriesType
         */
         public static final int GraphViewXML_seriesType = 2;
+        /** Attributes that can be used with a ScrollBar.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ScrollBar_sb_handlerColor com.neurosky.mindwavemobile:sb_handlerColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_sb_horizontal com.neurosky.mindwavemobile:sb_horizontal}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_sb_indicatorColor com.neurosky.mindwavemobile:sb_indicatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ScrollBar_sb_indicatorTextColor com.neurosky.mindwavemobile:sb_indicatorTextColor}</code></td><td></td></tr>
+           </table>
+           @see #ScrollBar_sb_handlerColor
+           @see #ScrollBar_sb_horizontal
+           @see #ScrollBar_sb_indicatorColor
+           @see #ScrollBar_sb_indicatorTextColor
+         */
+        public static final int[] ScrollBar = {
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.neurosky.mindwavemobile.R.attr#sb_handlerColor}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.neurosky.mindwavemobile:sb_handlerColor
+        */
+        public static final int ScrollBar_sb_handlerColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.neurosky.mindwavemobile.R.attr#sb_horizontal}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+          @attr name com.neurosky.mindwavemobile:sb_horizontal
+        */
+        public static final int ScrollBar_sb_horizontal = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.neurosky.mindwavemobile.R.attr#sb_indicatorColor}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.neurosky.mindwavemobile:sb_indicatorColor
+        */
+        public static final int ScrollBar_sb_indicatorColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.neurosky.mindwavemobile.R.attr#sb_indicatorTextColor}
+          attribute's value can be found in the {@link #ScrollBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.neurosky.mindwavemobile:sb_indicatorTextColor
+        */
+        public static final int ScrollBar_sb_indicatorTextColor = 2;
     };
 }

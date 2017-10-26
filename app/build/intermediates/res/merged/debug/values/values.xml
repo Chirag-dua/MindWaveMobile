@@ -6,6 +6,7 @@
     <color name="secondcolor">#ff777777</color>
     <color name="thirdcolor">#ffa9a9a9</color>
     <declare-styleable name="GraphViewXML"><attr format="string" name="seriesData"/><attr format="string" name="seriesType"/><attr format="string" name="seriesTitle"/><attr name="android:title"/><attr format="color" name="seriesColor"/></declare-styleable>
+    <declare-styleable name="ScrollBar"><attr format="color|reference" name="sb_handlerColor"/><attr format="color|reference" name="sb_indicatorColor"/><attr format="color|reference" name="sb_indicatorTextColor"/><attr format="boolean|reference" name="sb_horizontal"/></declare-styleable>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <string name="app_name">MindWaveMobile App</string>

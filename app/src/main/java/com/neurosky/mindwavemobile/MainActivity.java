@@ -6,8 +6,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,6 +33,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn_at).setOnClickListener(this);
         findViewById(R.id.cmp_att).setOnClickListener(this);
         findViewById(R.id.btn_at_2).setOnClickListener(this);
+        findViewById(R.id.btn_at_3).setOnClickListener(this);
+        findViewById(R.id.btn_at_4).setOnClickListener(this);
     }
 
 
@@ -47,6 +51,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void askPermission(){
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) { //permission already granted
             return;
+        }
+        if (!Settings.System.canWrite(getApplicationContext())) {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent, 200);
+
         }
         int hasWriteContactsPermission = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
@@ -93,6 +102,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_at_2 :
                 intent = new Intent(this, RecordAttention2.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_at_3 :
+                intent = new Intent(this, RecordAttentionImg.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_at_4 :
+                intent = new Intent(this, RecordAttentionPdf.class);
+                startActivity(intent);
+                break;
         }
     }
 }
