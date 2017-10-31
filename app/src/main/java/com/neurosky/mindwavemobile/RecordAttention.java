@@ -306,6 +306,8 @@ public class RecordAttention extends Activity{
                          at_mn = (TextView) findViewById(R.id.meanAtt2);
                          clkcnt = (TextView) findViewById(R.id.clkcnt);
 
+
+
                          File myFile2 = new File("/sdcard/AtVal " + date + ".txt");
 
                          FileReader fr = new FileReader(myFile2);

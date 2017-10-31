@@ -21,6 +21,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -114,12 +115,15 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
     private TextView tv_attention = null;
     //    private TextView tv_meditation = null;
     public TextView at_mn = null;
+    public TextView clkcnt = null;
 
     private Button btn_start = null;
     private Button btn_stop = null;
     private Button btn_selectdevice = null;
 
     private Context mContext;
+
+    String fContent = null;
 
 
     //private LinearLayout wave_layout;
@@ -399,7 +403,7 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
                         SimpleDateFormat sDate = new SimpleDateFormat("ddMMyyyyhhmmss");
                         String date = sDate.format(new Date());
 
-                        File atValFile = new File("/sdcard/AtVal " + date + ".txt");
+                        File atValFile = new File("/sdcard/At_from_Pdf_ " + date + ".txt");
                         atValFile.createNewFile();
                         FileOutputStream fOut2 = new FileOutputStream(atValFile);
                         OutputStreamWriter myOutWriter2 = new OutputStreamWriter(fOut2);
@@ -409,40 +413,37 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
                         myOutWriter2.close();
                         fOut2.close();
 
-                        File compressedFile = new File("/sdcard/C_" + date);
-                        compressedFile.createNewFile();
-                        HuffmanCompression huffmanCompression = new HuffmanCompression();
-                        huffmanCompression.encode(atValFile, compressedFile);
-
+                        File rawDataFile = new File("/sdcard/Raw_from_Pdf_ " + date + ".txt");
+                        atValFile.createNewFile();
+                        FileOutputStream fOut3 = new FileOutputStream(rawDataFile);
+                        OutputStreamWriter myOutWriter3 = new OutputStreamWriter(fOut3);
+                        for (int i = 0; i < rawData.size(); i++) {
+                            myOutWriter3.append(Integer.toString(rawData.get(i)) + " ");
+                        }
+                        myOutWriter3.close();
+                        fOut3.close();
 
                         Toast.makeText(getBaseContext(), "Done Writing To File", Toast.LENGTH_SHORT).show();
 
                         setContentView(R.layout.attention_graph);
 
-                        File myFile2 = new File("/sdcard/AtVal " + date + ".txt");
-                        try {
-                            FileReader fr = new FileReader(myFile2);
-                            BufferedReader br = new BufferedReader(fr);
+                        at_mn = (TextView) findViewById(R.id.meanAtt2);
+                        clkcnt = (TextView) findViewById(R.id.clkcnt);
 
-                            StringBuilder sbr = new StringBuilder();
-                            try {
-                                while ((line = br.readLine()) != null){
-                                    sbr.append(line);
-                                    line = sbr.toString();
-                                }
-                            } catch (IOException e) {
-                                // TODO Auto-generated catch block
-                                e.printStackTrace();
-                            }
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
+                        File myFile4 = new File("/sdcard/At_from_Pdf_" + date + ".txt");
+
+                        FileReader fr = new FileReader(myFile4);
+                        BufferedReader br = new BufferedReader(fr);
+
+                        StringBuilder sbr = new StringBuilder();
+
+                        while ((line = br.readLine()) != null) {
+                            sbr.append(line);
+
                         }
+                        fContent = sbr.toString();
 
                         setUpDrawWaveView2();
-
-
-                        String s = "Mean Attention Value : " + dmean.toString();
-                        at_mn.setText(s);
 
                     } catch (Exception e) {
                         Log.v("Write Byte ", e.getMessage());
@@ -495,8 +496,8 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setMaxY(100);
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(generateData(line));
-        series.setColor(Color.BLACK);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(generateData(fContent));
+        series.setColor(Color.BLUE);
         graph.addSeries(series);
     }
 
@@ -526,7 +527,7 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
     }
 
     public void setScreenBrightness(int brightnessValue){
-        if(brightnessValue >= 0 && brightnessValue <= 255){
+        if(brightnessValue >= -255 && brightnessValue <= 255){
             Settings.System.putInt(
                     mContext.getContentResolver(),
                     Settings.System.SCREEN_BRIGHTNESS,
@@ -588,7 +589,7 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
 
                 case MindDataType.CODE_RAW:
 //                    updateWaveView(msg.arg1);
-//                    rawData.add(msg.arg1);
+                    rawData.add(msg.arg1);
 //                        myOutWriter.append(Integer.toString(msg.arg1)+"\n");
                     break;
                 case MindDataType.CODE_MEDITATION:
@@ -599,7 +600,7 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
                     Log.d(TG2, "CODE_ATTENTION " + msg.arg1);
                     tv_attention.setText("" + msg.arg1);
                     atVal.add(msg.arg1);
-                    int br = (int)((msg.arg1)*2.5);
+                    int br = (int)(((msg.arg1) - 50)*2.5);
                     setScreenBrightness(br);
 //                    atfunc();
                     break;
