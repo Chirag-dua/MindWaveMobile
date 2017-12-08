@@ -600,8 +600,16 @@ public class RecordAttentionPdf extends Activity implements OnPageChangeListener
                     Log.d(TG2, "CODE_ATTENTION " + msg.arg1);
                     tv_attention.setText("" + msg.arg1);
                     atVal.add(msg.arg1);
-                    int br = (int)(((msg.arg1) - 50)*2.5);
-                    setScreenBrightness(br);
+                    ind++;
+                    cnt=2;
+                    if(ind>3) {
+                        while (cnt > 0) {
+                            mn += atVal.get(ind - cnt);
+                            cnt--;
+                        }
+                        mn = mn / 2;
+                        setScreenBrightness(mn);
+                    }
 //                    atfunc();
                     break;
                 case MindDataType.CODE_EEGPOWER:
