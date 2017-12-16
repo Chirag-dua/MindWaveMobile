@@ -79,6 +79,15 @@
         <Button
             android:layout_width="224dp"
             android:layout_height="wrap_content"
+            android:text="Record Attention - pdfCopy"
+            android:id="@+id/btn_at_5"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:layout_marginTop="23dp" />
+
+        <Button
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
             android:text="Compare Attention"
             android:id="@+id/cmp_att"
             android:layout_gravity="center_horizontal"

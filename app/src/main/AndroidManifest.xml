@@ -46,6 +46,8 @@
         <activity android:name=".RecordAttentionPdf"
             >
         </activity>
+        <activity android:name=".RecordAttentionPdfCopy"
+            ></activity>
         <activity android:name=".RecordAttentionImg"
             >
         </activity>

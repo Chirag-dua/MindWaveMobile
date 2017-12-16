@@ -42,6 +42,7 @@
         </activity>
         <activity android:name="com.neurosky.mindwavemobile.RecordAttentionPdf" >
         </activity>
+        <activity android:name="com.neurosky.mindwavemobile.RecordAttentionPdfCopy" />
         <activity android:name="com.neurosky.mindwavemobile.RecordAttentionImg" >
         </activity>
         <activity android:name="com.neurosky.mindwavemobile.CompareAttention" />

@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn_at_2).setOnClickListener(this);
         findViewById(R.id.btn_at_3).setOnClickListener(this);
         findViewById(R.id.btn_at_4).setOnClickListener(this);
+        findViewById(R.id.btn_at_5).setOnClickListener(this);
     }
 
 
@@ -109,6 +110,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_at_4 :
                 intent = new Intent(this, RecordAttentionPdf.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_at_5 :
+                intent = new Intent(this,RecordAttentionPdfCopy.class);
                 startActivity(intent);
                 break;
         }
